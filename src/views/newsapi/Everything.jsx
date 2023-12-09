@@ -15,7 +15,7 @@ const Everything = () => {
 const { makeRequest, isLoading, data, error } = useRequestData()
 
 // State til at rumme der skal søges efter i nyhederne
-const [  searchKey, setSearchKey ] = useState ("ai")
+const [  searchKey, setSearchKey ] = useState ("denmark")
 
 // State til Language
 
@@ -28,16 +28,15 @@ const [ language, setLanguage ] = useState( "de" )
 
 useEffect(()=> {
 
-    makeRequest( "https://newsapi.org/v2/everything?q=" + searchKey + "&pageSize=50&language" + language  + 
-    "&apiKey=" + import.meta.env.VITE_APP_NEWSAPIKEY, "GET" )
+    makeRequest( "https://newsapi.org/v2/everything?q=" + searchKey + "&pageSize=50&language=" + language +  "&apiKey=" + import.meta.env.VITE_APP_NEWSAPIKEY, "GET" )
 
     // makeRequest( "https://newsapi.org/v2/everything?q=ai&pageSize=50&language=en&apiKey=e12d1ab2796144d58bde63fcc3b5c705", "GET")
 
 }, [ language ])     //Når der er ændringer
 
-// useEffect (()=> {
-//    handleSearch()
-// }, [language])
+useEffect (()=> {
+   handleSearch()
+}, [language])
 
 const handleSearchKeyUp = (e)=> {
     if(e.key === 'Enter' ||  e.code === 'Enter') {
@@ -52,8 +51,7 @@ const handleSearchKeyUp = (e)=> {
     const handleSearch = e => {
 
         // e.preventDefault()
-        makeRequest( "https://newsapi.org/v2/everything?q=" + searchKey + "&pageSize=50&language=" + language + 
-        + "&apiKey=" + import.meta.env.VITE_APP_NEWSAPIKEY, "GET" )
+        makeRequest( "https://newsapi.org/v2/everything?q=" + searchKey + "&pageSize=50&language=" + language  + "&apiKey=" + import.meta.env.VITE_APP_NEWSAPIKEY, "GET" )
 
     }
 
@@ -80,11 +78,11 @@ const handleSearchKeyUp = (e)=> {
             />
 
               {/* Language Dropdown */}
-            <select onChange = { e => setLanguage( e.target.value)} value = { language }>
+        <select onChange = { e => setLanguage( e.target.value)} value = { language}>
           {
-            newsRequestParameters.language.map( lang=> {
+            newsRequestParameters.language.map( lang=> 
                 <option key={lang.code} value={lang.code}>{lang.language}</option>
-            }) }
+            ) }
         </select>
        
 
