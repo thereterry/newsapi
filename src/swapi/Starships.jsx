@@ -42,7 +42,7 @@ const Starships = () => {
                 <h2 className='text-xl font-bold'>{s.name}</h2>
                 <ul>
                      <li> Model: {s.model}</li>
-                     <li> Created: { new Date(s.created). toLocaleString ("da-DK", { year:"2-digit", month:"numeric" , hour: "2-digit", minute:"2-digit" }) }</li>
+                     <li> Created: { new Date(s.created). toLocaleString ("da-DK", { year:"2-digit", month:"long", day: "numeric", hour: "2-digit", minute: "2-digit" }) }</li>
                 
                 </ul>
             </div>

@@ -24,6 +24,14 @@ import Facts from './rapidapi/Facts';
 import Hobbies from './rapidapi/Hobbies';
 import LoveCalculator from './rapidapi/LoveCalculator'
 
+import Weather1 from './openweather/Weather1';
+import Weather2 from './openweather/Weather2';
+import Weather3 from './openweather/Weather3';
+import Weather4 from './openweather/Weather4';
+import Pollution from './components/Pollution';
+import Spoonacular from './spoonacularapi/Spoonacular';
+
+
 
 
 
@@ -56,12 +64,28 @@ function App () {
 
 
 
-          {/*JSONPLACEholder */}
+          {/*SWAPI */}
           { <Route path="starships" element={ <Starships/> } /> }
+
+            {/*OPENWEATHER */}
+          {/* { <Route path="weather" element={ < Weather/> } /> } */}
+          { <Route path="weather1" element={ <Weather1/> } /> }
+          { <Route path="weather2" element={ <Weather2/> } /> }
+          { <Route path="weather3" element={ <Weather3/> } /> }
+          { <Route path="weather4" element={ <Weather4/> } /> }
+          { <Route path="pollution" element={ <Pollution/> } /> }
+
+          {/*SPOONACULARAPI */}
+         { <Route path="spoonacular" element={ <Spoonacular/> } /> }
+       
+         
+
+
+
           {/*JSONPLACEholder */}
           <Route path="posts" element={ <Posts/> } />
           <Route path="post/:postID" element={ <Post/> } />
-          <Route path="post" element={ <Post/> } />
+          {<Route path="post" element={ <Post/> } /> }
           <Route path="postadmin" element={ <PostAdmin/> } />
           <Route path="postcreate" element={ <PostCreate/> } />
           <Route path="/postedit/:postID" element={ <PostEdit/> } />

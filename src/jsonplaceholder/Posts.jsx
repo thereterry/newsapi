@@ -23,6 +23,7 @@ const Posts = () => {
     makeRequest("https://jsonplaceholder.typicode.com/posts");
   }, []);
 
+  //Slice data aht.prev og next
   const sliceData = ( dataToSlice) =>{
     //returnerer  data slicet fx (0,20) eller (20,40)
    return dataToSlice.slice( ( currentPage * itemsPerPage ), ( currentPage * itemsPerPage + itemsPerPage ) )
@@ -39,53 +40,45 @@ const Posts = () => {
 
       { error && <h2>Error ...</h2>}
 
-      <ItemsPerPage setItemsPerPage={ setItemsPerPage } setCurrentPage={setCurrentPage} options={ [5, 10, 50, 200] } />
-
-      {
-        data && 
-        <>
-        { /* Previous-forrige-button*/  }
-        <button className="btn" onClick= { ()=> setCurrentPage ( currentPage -1) }
-        disabled= { currentPage <=0  }>Prev</button>
-         <button className="btn" onClick= { ()=> setCurrentPage ( currentPage + 1) }
-        disabled= { currentPage +1 >= Math.ceil(data.length / itemsPerPage) }>Next</button>
-      
-        </>
-      }
-{/* 
-      {
-        data &&
-        <PrevNext setCurrentPage={ setCurrentPage } currentPage={currentPage}  dataLength= { data?.length } itemsPerPage = {itemsPerPage}options = { [5, 10, 50, 200] } />
-      } }
+      <ItemsPerPage setItemsPerPage={ setItemsPerPage } setCurrentPage={setCurrentPage} options={ [5, 10, 50, 200] } /> 
 
       {/* <div>
-          {[5, 10, 20, 100].map(o => (
-            <button key={"btn" + o} className="btn" onClick={() => { setItemsPerPage(o); setCurrentPage(0); }}>
-              {o} pr.side
-            </button>
-          ))}
-      </div>   */}
-     
+        {
+
+          [ 5, 10, 20, 50,100 ].map(o => <button  key = {"btn" + o } className="btn" onClick={ ()=> { setItemsPerPage ( o ); setCurrentPage( 0 ) } } >{ o } pr.side</button> )
+
+        }  
+      </div> */}
+
+    
+
+      {
+        data &&  
+        <PrevNext setCurrentPage={ setCurrentPage } currentPage={ currentPage } dataLength={ data?.length } itemsPerPage={ itemsPerPage } />
+        // <>
+        // { /* Previous-forrige-button*/  }
+        //   <button className="btn" onClick= { ()=> setCurrentPage ( currentPage -1) } disabled= { currentPage <=0  }>Prev</button>
+        //  <button className="btn" onClick= { ()=> setCurrentPage ( currentPage + 1) }     disabled= { currentPage +1 >= Math.ceil(data.length / itemsPerPage) }>Next</button>    
+        // </>
+      }       
+
+     {/* {   data && sliceData  ( (currentPage * itemsPerPage ), ( currentPage * itemsPerPage) ).map ( p =>  */}
+
+        { data && sliceData(data).map(p =>
   
-
-
-    { 
-      data && sliceData ( data ).map (p=> {
-          <div className="shadow-xl card bg-base-100" key={ p.id }>
+           <div className="shadow xl card bg-base-100" key={ p.id }>
             <div className="card-body">
-            <h2 className="text-xl font-bold">{p.title}</h2>
+            <h2 className="text-xl font-bold"> {p.title} </h2>
+            <p>{ p.id }</p>                 
+           <Link to = { "/post/" + p.id} className="btn">Læs mere</Link>
             </div>
-            <p>{p.id}</p>
-         
-          <Link to = {"/post/" + p.id} className="btn">Læs mere</Link>
+    
+          </div>
+          ) }
+      
         </div>
-    })
 
-    }
-
-
-    </div>
-  );
+  )
 };
 
 export default Posts;

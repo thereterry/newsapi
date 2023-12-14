@@ -55,32 +55,11 @@
   font-size: calc(1em + 0.5vw);
 }
 
-.loader {
-  width: 48px;
-  height: 48px;
-  border: 5px solid #FFF;
-  border-bottom-color: #FF3D00;
-  border-radius: 100%;
-  display: inline-block;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-}
 
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
 
-  100% {
-    transform: rotate(360deg);
-  }
-}
 
 /*background vises KUN hvis dialog åbnes med dialog.showModal*/
 
-dialog::backdrop {
-  background: rgba(0, 0, 0, 0.5);
-}
 
 nav {
   background-color: #f0f0f0;

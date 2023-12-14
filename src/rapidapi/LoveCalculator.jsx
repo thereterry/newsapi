@@ -36,7 +36,7 @@ const LoveCalculator = () => {
 
   return (
     <div>
-              <h1>Love Calculator</h1>
+              <h1>Med RapidAPI - Love Calculator</h1>
               { isLoading && <Loader/> }
               { error && <Error/> }
               <>

@@ -8,7 +8,7 @@ const Todos = () => {
   const { data, isLoading, error, makeRequest }   = useRequestData();
 
   // const  [ isComplete, setIsComplete ]= useState(null)
-   const  [ isComplete, setIsComplete ]= useState(false)
+   const  [ isComplete, setIsComplete ]= useState(true)
 
   useEffect(()=> {
     makeRequest("https://jsonplaceholder.typicode.com/todos")
@@ -17,7 +17,7 @@ const Todos = () => {
 
   return (
     <div>
-            <h1> JSONPlaceholder- Data/endpoint "todos" </h1>
+            <h1> JSONPlaceholder- Todos" </h1>
 
             { isLoading && <Loader/>}
 
@@ -39,7 +39,7 @@ const Todos = () => {
                       <h2>TODO {t.title}</h2>
                       <p>Id: {t.id}</p>
                       <p>Udfort: 
-                        <span className={t.completed ? "text-green-700" : "text-red-700" }> { t.completed ? "JEP" : "NIX" } </span>
+                        <span className={ t.completed ? "text-green-700" : "text-red-700" }> { t.completed ? "JEP" : "NIX" } </span>
                       </p>
                 </div>
               ) }
