@@ -3,12 +3,12 @@ import useRequestData from '../hooks/useRequestData';
 import Loader from '../components/Loader';
 import Error from '../components/Error';
 import { Link } from 'react-router-dom';
+import { Input } from 'postcss';
 
 const Spoonacular = () => {
 
     const { data, isLoading, error, makeRequest }   = useRequestData()
 
-    const [recipes, setRecipes] = useState();
 
     useEffect(()=>{
         fetchRecipes()
@@ -25,16 +25,14 @@ const Spoonacular = () => {
 
   return (
     <div>
-           <h1 className='mb-6 text-3xl font-bold text-center'>   Explore Delicious Vegetarian Recipes</h1>
+           <h1 className='mb-6 text-3xl font-bold text-center'>Explore Delicious Vegetarian Recipes</h1>
      
 
             { isLoading && <Loader/>}
 
             { error && <h2>Error ...</h2>}
-
-            
-
-
+ 
+        
             { data && data.recipes && (
 
             <div>
@@ -42,8 +40,13 @@ const Spoonacular = () => {
            <div key={recipe.id}>
            <h2>{recipe.title}</h2>
            <img src={recipe.image} alt={`Recipe for ${recipe.title}`} />
+           <form type = "text" placeholder='Search for recipes'>
+            <button onClick={fetchRecipes} className='w-40 btn btn-neutral'> Discover New Recipes!</button>
+            </form>
+
            <a href={recipe.sourceUrl} target='_blank' rel='noopener noreferrer'> Explore the Full Recipe</a>
-           <button onClick={fetchRecipes} className='w-40 btn btn-neutral'> Discover New Recipes!</button>
+           
+       
        </div>
         ))}
     </div>
