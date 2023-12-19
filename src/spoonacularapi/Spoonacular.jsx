@@ -19,10 +19,6 @@ const Spoonacular = () => {
         makeRequest("https://api.spoonacular.com/recipes/random?number=1&tags=vegetarian&apiKey=" + import.meta.env.VITE_APP_SPOONACULARAPIKEY)
     }
 
-   
-   
-
-
   return (
     <div>
            <h1 className='mb-6 text-3xl font-bold text-center'>Explore Delicious Vegetarian Recipes</h1>

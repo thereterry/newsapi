@@ -73,18 +73,35 @@ const Navbar = () => {
           </div>
 
          <div>
-          <li>
-            <details>
-              <summary>SWAPI</summary>
-                <ul>
-                  <li>
-                  <NavLink to="/starships" className="hover:text-gray-200">Starships</NavLink>
-                  </li>
-                </ul>
-            </details>
-          </li>
-  
+            <li>
+              <details>
+                <summary>SWAPI</summary>
+                  <ul>
+                    <li>
+                    <NavLink to="/starships" className="hover:text-gray-200">Starships</NavLink>
+                    </li>
+                  </ul>
+              </details>
+            </li>
           </div>
+
+          <div>
+            <li>
+              <details>
+                <summary>Airtable</summary>
+                  <ul>
+                    <li>
+                    <NavLink to="/airtable1" className="hover:text-gray-200">Shoppinglist</NavLink>
+                    </li>
+                    <li>
+                    <NavLink to="/airtable2" className="hover:text-gray-200">Shoppinglist Admin</NavLink>
+                    </li>
+                  </ul>
+              </details>
+            </li>
+          </div>
+
+         
 
        
           <div>

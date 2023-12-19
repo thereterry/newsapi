@@ -41,7 +41,8 @@ const LeafletMap = ( { coord =[56, 10], zoom = "13",  info= "", setLat = null, s
         //Hvis der er info til popup
         if (info !== "") {
           markerRef.current.bindPopup(info)
-        }
+          // .openPopUp()      
+  }
 
       } else {
         //Flyt view på kortet så fokus er på de nye koordinator

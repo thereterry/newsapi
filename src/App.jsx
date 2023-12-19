@@ -30,6 +30,9 @@ import Weather3 from './openweather/Weather3';
 import Weather4 from './openweather/Weather4';
 import Pollution from './components/Pollution';
 import Spoonacular from './spoonacularapi/Spoonacular';
+import Shoppinglist from './airtable/Shoppinglist';
+import ShoppinglistAdmin from './airtable/ShoppinglistAdmin';
+
 
 
 
@@ -77,6 +80,10 @@ function App () {
 
           {/*SPOONACULARAPI */}
          { <Route path="spoonacular" element={ <Spoonacular/> } /> }
+
+            {/*AIRTABLE */}
+            { <Route path="airtable1" element={ <Shoppinglist/> } /> }
+            { <Route path="airtable2" element={ <ShoppinglistAdmin/> } /> }
        
          
 
