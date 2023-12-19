@@ -32,11 +32,7 @@ import Pollution from './components/Pollution';
 import Spoonacular from './spoonacularapi/Spoonacular';
 import Shoppinglist from './airtable/Shoppinglist';
 import ShoppinglistAdmin from './airtable/ShoppinglistAdmin';
-
-
-
-
-
+import ToDosAirtable from './todos-airtable/ToDosAirtable';
 
 
 
@@ -84,6 +80,9 @@ function App () {
             {/*AIRTABLE */}
             { <Route path="airtable1" element={ <Shoppinglist/> } /> }
             { <Route path="airtable2" element={ <ShoppinglistAdmin/> } /> }
+            { <Route path="airtable3" element={ <ToDosAirtable/> } /> }
+
+
        
          
 

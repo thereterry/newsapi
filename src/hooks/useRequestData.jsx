@@ -30,19 +30,19 @@ const useRequestData = () => {
             break;   
 
             case "POST":
-              response = await axios.post(apiurl, bodydata)
+              response = await axios.post(apiurl, bodydata, { headers,params })
               break;
 
               case "PUT":
-                response = await axios.put(apiurl, bodydata)
+                response = await axios.put(apiurl, bodydata,  { headers,params })
                 break
 
                 case "PATCH":
-                  response = await axios.patch(apiurl, bodydata)
+                  response = await axios.patch(apiurl, bodydata, { headers,params } )
                   break
 
                   case "DELETE":
-                    response = await axios.delete(apiurl)
+                    response = await axios.delete(apiurl, { headers,params })
                     break
 
                     default: 

@@ -4,7 +4,9 @@ import useRequestData from "../hooks/useRequestData";
 import Loader from "../components/Loader";
 import { Link } from "react-router-dom";
 import { FaEdit, FaTrash, FaPlus } from "react-icons/fa";
-
+import ItemsPerPage from "../components/ItemsPerPage";
+import PrevNext from "../components/PrevNext";
+import Shoppinglist from './Shoppinglist'
 
 const ShoppinglistAdmin = () => {
 
@@ -14,7 +16,7 @@ const ShoppinglistAdmin = () => {
 
     useEffect(() => {
         //Hent data som skal map'es ud...
-        makeRequest("https://api.airtable.com/v0/appIIM18qHBo33b9k/Table%201recyg5LfZ3Fzvjl9W", "DELETE", null,
+        makeRequest("https://api.airtable.com/v0/appIIM18qHBo33b9k/Table%201/", "DELETE", null,
 
         {
             'Authorization' : "Bearer " + import.meta.env.VITE_APP_AIRTABLEKEY
@@ -33,7 +35,18 @@ const ShoppinglistAdmin = () => {
     
   return (
     <div>
-      
+            <h1 className='mb-6 text-3xl font-bold text-center'>Administer din inkøbliste</h1>
+
+            {isLoading && <Loader />}
+
+            {error && <h2>Error... </h2>}
+
+            {
+                data && data.records.map
+                
+            }
+
+
     </div>
   )
 }

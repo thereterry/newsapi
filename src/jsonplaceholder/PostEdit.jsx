@@ -42,7 +42,7 @@ const PostEdit = () => {
 
         const rettePost = { title, body, userId }
 
-        makeRequestPut( "https://jsonplaceholder.typicode.com/posts/" + postID, "PUT", rettePost ) 
+        makeRequestPUT( "https://jsonplaceholder.typicode.com/posts/" + postID, "PUT", rettePost ) 
 
     }
 
