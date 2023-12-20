@@ -20,7 +20,7 @@ const Starships = () => {
   return (
 
     <div>
-        <h1>  SWAPI - Starships </h1>
+        <h1 className='text-3xl font-bold underline'> SWAPI - Starships </h1>
 
         { isLoading && <Loader/>}
 

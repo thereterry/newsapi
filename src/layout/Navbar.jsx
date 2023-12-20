@@ -95,7 +95,7 @@ const Navbar = () => {
                 </li>
                 <li>
                 <NavLink to="/weather4"  className="hover:text-gray-200">CurrentWeather m/input og DAWA- datalist og map </NavLink>
-                <NavLink to="/weather4"  className="hover:text-gray-200">Pollution/forurening ud fra koordinater </NavLink>
+                <NavLink to="/pollution"  className="hover:text-gray-200">Pollution/forurening ud fra koordinater </NavLink>
                 </li> 
               </ul>
             </details>
@@ -147,11 +147,9 @@ const Navbar = () => {
                     <NavLink to="/airtable1" className="hover:text-gray-200">Shoppinglist</NavLink>
                     </li>
                     <li>
-                    <NavLink to="/airtable2" className="hover:text-gray-200">Shoppinglist Admin</NavLink>
+                    <NavLink to="/airtable2" className="hover:text-gray-200">Todos Airtable</NavLink>
                     </li>
-                    <li>
-                    <NavLink to="/airtable3" className="hover:text-gray-200">ToDos Airtable</NavLink>
-                    </li>
+                 
                   </ul>
               </details>
             </li>

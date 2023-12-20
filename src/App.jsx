@@ -28,11 +28,10 @@ import Weather1 from './openweather/Weather1';
 import Weather2 from './openweather/Weather2';
 import Weather3 from './openweather/Weather3';
 import Weather4 from './openweather/Weather4';
-import Pollution from './components/Pollution';
+import Pollution from './openweather/Pollution';
 import Spoonacular from './spoonacularapi/Spoonacular';
 import Shoppinglist from './airtable/Shoppinglist';
-import ShoppinglistAdmin from './airtable/ShoppinglistAdmin';
-import ToDosAirtable from './todos-airtable/ToDosAirtable';
+import ToDosAirtable from './airtable/ToDosAirtable';
 
 
 
@@ -79,8 +78,7 @@ function App () {
 
             {/*AIRTABLE */}
             { <Route path="airtable1" element={ <Shoppinglist/> } /> }
-            { <Route path="airtable2" element={ <ShoppinglistAdmin/> } /> }
-            { <Route path="airtable3" element={ <ToDosAirtable/> } /> }
+            { <Route path="airtable2" element={ <ToDosAirtable/> } /> }
 
 
        
